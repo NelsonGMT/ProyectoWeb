@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>PELICLUB - Detective Pikachu</title>
+    <!-- CSS desde static -->
+    <link rel="stylesheet" href="{% static 'members/estilos/estilos2.css' %}">
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img class="logo" src="{% static 'members/imagenes/logo.webp' %}" alt="Logo">
+        <h2 class="nombre-empresa">PELICLUB</h2>  
+    </div>
+
+<nav>
+   
+        <a href="{% url 'proyecto' %}" class="nav-link">Cartelera</a>
+        <a href="{% url 'logout' %}" class="nav-link">Cerrar sesión</a>
+    
+</nav>
+
+
+</header>
+
+<br>
+
+<div class="wrapper">
+    <img src="{% static 'members/imagenes/DetectivePika.jpg' %}" alt="DetectivePika"> 
+    <div class="text-box">
+        <h2>Sinopsis</h2>
+        <p>
+           El dectective Harry Goodman desaparece y su hijo Tom, a sus 21 años, investiga lo ocurrido junto a su antiguo compañero Pokémon: el Detective Pikachu. <br>
+Ambos unirán fuerzas para resolver las pistas de las calles de Tyme City y así encontrarlo. <br>
+En esta ciudad hiperrealista encontrarán a múltiples Pokémon y descubrirán el complot detrás de la desaparición de su padre.<br><br>
+    </div>
+
+    <!-- Video de YouTube -->
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/bILE5BEyhdo?si=eOh3mI7ttwjlL8KU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br><br><br>
+
+</div>
+
+<br><br><br>
+
+    <footer class="footer">
+    <ul class="menu">
+        <li class="menu-elem"><a href="{% url 'inicio' %}" class="menu-icon">Inicio</a></li>
+        <li class="menu-elem"><a href="{% url 'proyecto' %}" class="menu-icon">Cartelera</a></li>
+        <li class="menu-elem"><a href="https://www.instagram.com/peli.club?igsh=MWludG5jMTgzNWhxcA%3D%3D&utm_source=qr" target="_blank" class="menu-icon">Contacto</a></li>
+    </ul>
+    <p class="text">@2025 | Todos los derechos reservados</p>
+</footer>

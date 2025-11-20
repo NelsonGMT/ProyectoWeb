@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>PELICLUB - Deadpool</title>
+    <!-- CSS desde static -->
+    <link rel="stylesheet" href="{% static 'members/estilos/estilos2.css' %}">
+</head>
+<body>
+    
+<header>
+    <div class="logo">
+        <img class="logo-img" src="{% static 'members/imagenes/logo.webp' %}" alt="Logo">
+        <h2 class="nombre-empresa">PELICLUB</h2>  
+    </div>
+
+   <nav>
+        <a href="{% url 'proyecto' %}" class="nav-link">Cartelera</a>
+        <a href="{% url 'logout' %}" class="nav-link">Cerrar sesión</a>
+   </nav>
+</header>
+   
+<main class="wrapper">
+    <div class="movie-poster">
+        <img src="{% static 'members/imagenes/Deadpool.jpg' %}" alt="Deadpool"> 
+    </div>
+
+    <div class="text-box">
+        <h2>Sinopsis</h2>
+        <p>
+            Wade Wilson, tras ser sometido a un cruel experimento científico, adquiere poderes especiales que le convierten en Deadpool.
+            Armado con sus nuevas habilidades y un retorcido sentido del humor, tratará de dar caza al hombre que casi destruyó su vida.
+        </p>
+
+        <!-- Video de YouTube -->
+        <div class="trailer">
+            <iframe src="https://www.youtube.com/embed/0JnRdfiUMa8?si=eCaVkD-bMqrK0TLi"
+                title="Deadpool Trailer"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <ul class="menu">
+        <li class="menu-elem"><a href="{% url 'inicio' %}" class="menu-icon">Inicio</a></li>
+        <li class="menu-elem"><a href="{% url 'proyecto' %}" class="menu-icon">Cartelera</a></li>
+        <li class="menu-elem"><a href="https://www.instagram.com/peli.club?igsh=MWludG5jMTgzNWhxcA%3D%3D&utm_source=qr" target="_blank" class="menu-icon">Contacto</a></li>
+    </ul>
+    <p class="text">@2025 | Todos los derechos reservados</p>
+</footer>
+
+</body>
+</html>

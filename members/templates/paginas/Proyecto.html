@@ -1,0 +1,102 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PELICLUB</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'members/estilos/estiloCartelera.css' %}">
+</head>
+<body bgcolor="blue">
+
+<header>
+    <div class="logo-container">
+        <img class="logo" src="{% static 'members/imagenes/logo.webp' %}" alt="Logo">
+        <h1 class="nombre-empresa">PELICLUB</h1>  
+    </div>
+
+    <nav>
+        <a href="{% url 'proyecto' %}">Cartelera</a>
+        <a href="{% url 'logout' %}" class="btn-logout">Cerrar sesión</a>
+    </nav>
+</header>
+
+<main>
+    <section class="intro">
+        <h1>Bienvenidos a PELICLUB</h1>
+        <p>Esta página está para noticias y reservaciones de películas.</p>
+    </section>
+
+    <section class="cartelera">
+        <div class="contenedor">
+            <a href="{% url 'ProyectoPagWicked' %}">
+                <img src="{% static 'members/imagenes/wicked.jpg' %}" alt="Wicked">
+                <p>Wicked</p>
+            </a>
+            <a href="{% url 'ProyectoPagNosf' %}">
+                <img src="{% static 'members/imagenes/nosf.jpg' %}" alt="Nosferatu">
+                <p>Nosferatu</p>
+            </a>
+            <a href="{% url 'ProyectoPagWolvPool' %}">
+                <img src="{% static 'members/imagenes/DeadWolv.jpg' %}" alt="Deadpool y Wolverine">
+                <p>Deadpool y Wolverine</p>
+            </a>
+            <a href="{% url 'ProyectoPagJackJill' %}">
+                <img src="{% static 'members/imagenes/jackjill.jpg' %}" alt="Jack y Jill">
+                <p>Jack y Jill</p>
+            </a>
+        </div>
+
+        <div class="contenedor">
+            <a href="{% url 'ProyectoPagFlow' %}">
+                <img src="{% static 'members/imagenes/flow.jpg' %}" alt="Flow">
+                <p>Flow</p>
+            </a>
+            <a href="{% url 'ProyectoPagGhostWorld' %}">
+                <img src="{% static 'members/imagenes/GhostWorld.jpg' %}" alt="GhostWorld">
+                <p>GhostWorld</p>
+            </a>
+            <a href="{% url 'ProyectoPagGatoBotas' %}">
+                <img src="{% static 'members/imagenes/Puss_in_Boots_poster.webp' %}" alt="El gato con botas">
+                <p>El Gato con Botas</p>
+            </a>
+            <a href="{% url 'ProyectoPagShrek2' %}">
+                <img src="{% static 'members/imagenes/shrek2.jpg' %}" alt="Shrek 2">
+                <p>Shrek 2</p>
+            </a>
+        </div>
+
+        <div class="contenedor">
+            <a href="{% url 'ProyectoPagIT' %}">
+                <img src="{% static 'members/imagenes/IT.jpg' %}" alt="IT">
+                <p>ESO: El Payaso</p>
+            </a>
+            <a href="{% url 'ProyectoPagDeadpool' %}">
+                <img src="{% static 'members/imagenes/Deadpool.jpg' %}" alt="Deadpool">
+                <p>Deadpool</p>
+            </a>
+            <a href="{% url 'ProyectoPagJohnWick' %}">
+                <img src="{% static 'members/imagenes/JohnW.jpg' %}" alt="John Wick">
+                <p>John Wick</p>
+            </a>
+            <a href="{% url 'ProyectoPagDetectivePikachu' %}">
+                <img src="{% static 'members/imagenes/DetectivePika.jpg' %}" alt="Detective Pikachu">
+                <p>Detective Pikachu</p>
+            </a>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <ul class="footer-menu">
+        <li><a href="{% url 'inicio' %}">Inicio</a></li>
+        <li><a href="{% url 'proyecto' %}">Cartelera</a></li>
+        <li><a href="https://www.instagram.com/peli.club?igsh=MWludG5jMTgzNWhxcA%3D%3D&utm_source=qr" target="_blank">Contacto</a></li>
+    </ul>
+    <p>&copy; 2025 | Todos los derechos reservados</p>
+</footer>
+
+</body>
+</html>

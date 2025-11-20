@@ -1,0 +1,260 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket - PELICLUB</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .ticket {
+            width: 100%;
+            max-width: 400px;
+            background: white;
+            padding: 25px;
+            border: 3px dashed #333;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            position: relative;
+        }
+        .ticket::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 20%;
+            right: 20%;
+            height: 3px;
+            background: repeating-linear-gradient(
+                90deg,
+                transparent,
+                transparent 5px,
+                #333 5px,
+                #333 10px
+            );
+        }
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #333;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 28px;
+            color: #333;
+        }
+        .header p {
+            margin: 5px 0 0 0;
+            font-size: 14px;
+            color: #666;
+        }
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            margin: 12px 0;
+            padding: 8px 0;
+            border-bottom: 1px dashed #ccc;
+        }
+        .info-label {
+            font-weight: bold;
+            color: #333;
+        }
+        .info-value {
+            color: #555;
+            text-align: right;
+        }
+        .codigo {
+            background: #f8f9fa;
+            padding: 15px;
+            text-align: center;
+            border: 2px solid #333;
+            border-radius: 8px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            font-size: 18px;
+            letter-spacing: 2px;
+        }
+        .total-section {
+            background: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+            margin: 20px 0;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 12px;
+            color: #666;
+            border-top: 1px dashed #ccc;
+            padding-top: 15px;
+        }
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 25px;
+            justify-content: center;
+        }
+        .btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        .btn-print {
+            background: #007bff;
+            color: white;
+        }
+        .btn-print:hover {
+            background: #0056b3;
+            transform: translateY(-2px);
+        }
+        .btn-buy {
+            background: #28a745;
+            color: white;
+        }
+        .btn-buy:hover {
+            background: #1e7e34;
+            transform: translateY(-2px);
+        }
+        .btn-tickets {
+            background: #6c757d;
+            color: white;
+        }
+        .btn-tickets:hover {
+            background: #545b62;
+            transform: translateY(-2px);
+        }
+        .qr-placeholder {
+            text-align: center;
+            margin: 20px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border: 2px dashed #ccc;
+            border-radius: 8px;
+        }
+        @media print {
+            body { background: white; }
+            .btn-group { display: none; }
+            .ticket { 
+                box-shadow: none; 
+                border: 2px dashed #000;
+            }
+        }
+        .movie-icon { color: #ff6b6b; }
+        .time-icon { color: #4ecdc4; }
+        .seat-icon { color: #45b7d1; }
+        .money-icon { color: #96ceb4; }
+    </style>
+</head>
+<body>
+    <div class="ticket">
+        <div class="header">
+            <h1>🎬 PELICLUB</h1>
+            <p>¡Gracias por tu compra!</p>
+        </div>
+        
+        <div class="codigo">
+            🎟️ {{ ticket.codigo_ticket }}
+        </div>
+
+        <div class="info-row">
+            <span class="info-label">🎭 Película:</span>
+            <span class="info-value">{{ ticket.pelicula }}</span>
+        </div>
+
+        <div class="info-row">
+            <span class="info-label">🕒 Horario:</span>
+            <span class="info-value">{{ ticket.horario }}</span>
+        </div>
+
+        <div class="info-row">
+            <span class="info-label">🎪 Sala:</span>
+            <span class="info-value">{{ ticket.sala }}</span>
+        </div>
+
+        <div class="info-row">
+            <span class="info-label">👤 Cliente:</span>
+            <span class="info-value">{{ ticket.usuario.nombre_usuario }}</span>
+        </div>
+
+        <div class="info-row">
+            <span class="info-label">🎫 Boletos:</span>
+            <span class="info-value">{{ ticket.cantidad_boletos }}</span>
+        </div>
+
+        <div class="info-row">
+            <span class="info-label">💰 Precio c/u:</span>
+            <span class="info-value">${{ ticket.precio_unitario }} MXN</span>
+        </div>
+
+        <div class="total-section">
+            💵 TOTAL: ${{ ticket.total_pagado }} MXN
+        </div>
+
+        <div class="info-row">
+            <span class="info-label">📅 Fecha compra:</span>
+            <span class="info-value">{{ ticket.fecha_compra|date:"d/m/Y H:i" }}</span>
+        </div>
+
+        <div class="qr-placeholder">
+            <div style="margin-bottom: 10px;">📱</div>
+            <strong>CÓDIGO QR</strong><br>
+            <small>{{ ticket.codigo_ticket }}</small>
+        </div>
+
+        <div class="footer">
+            <p>📍 Presentar este ticket en taquilla</p>
+            <p>⏰ Llegar 15 minutos antes de la función</p>
+            <p>📞 Contacto: www.instagram.com/peli.club</p>
+        </div>
+    </div>
+
+    <div class="btn-group">
+        <button onclick="window.print()" class="btn btn-print">🖨️ Imprimir Ticket</button>
+        <a href="{% url 'comprar_ticket' %}" class="btn btn-buy">🎟️ Comprar Otro</a>
+        <a href="{% url 'mis_tickets' %}" class="btn btn-tickets">📋 Mis Tickets</a>
+    </div>
+
+    <script>
+        // Efecto de impresión mejorado
+        document.addEventListener('DOMContentLoaded', function() {
+            // Agregar efecto de "ticket real"
+            const ticket = document.querySelector('.ticket');
+            ticket.style.animation = 'fadeIn 0.5s ease-in';
+            
+            // Mensaje de éxito
+            console.log('🎟️ Ticket generado exitosamente:', '{{ ticket.codigo_ticket }}');
+        });
+
+        // Agregar estilos de animación
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

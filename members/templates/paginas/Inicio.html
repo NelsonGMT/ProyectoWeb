@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>PELICLUB</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'members/estilos/estilosinicios.css' %}">
+</head>
+<body>
+
+<header>
+    <div class="logo-container">
+        <img class="logo" src="{% static 'members/imagenes/logo.webp' %}" alt="Logo">
+        <h1 class="nombre-empresa">PELICLUB</h1>  
+    </div>
+
+    <nav>
+        {% if user.is_authenticated %}
+            <span class="bienvenida">Bienvenido, {{ user.username }}</span>
+            <a href="{% url 'proyecto' %}">Cartelera</a>
+            <a href="{% url 'logout' %}" class="btn-logout">Cerrar sesión</a>
+        {% else %}
+            <span class="bienvenida">Bienvenido, invitado</span>
+            <a href="{% url 'login' %}">Iniciar sesión</a>
+            <a href="{% url 'register' %}" class="btn-register">Registrarse</a>
+        {% endif %}
+    </nav>
+</header>
+
+<main class="hero-section">
+    <div class="hero-content">
+        <img src="{% static 'members/imagenes/logo.webp' %}" class="hero-logo" alt="Logo grande"> 
+        <h2>¿Qué es PELICLUB?</h2>
+        <p>Bienvenidos a Peliclub, un sitio donde puedes consultar los tipos y películas disponibles actualmente.</p>
+        <p>Encuentra películas conocidas mundialmente como Shrek, Deadpool, Wolverine, Wicked, entre otras.</p>
+    </div>
+</main>
+
+<!-- Carrusel -->
+
+
+<footer class="footer">
+    <ul class="footer-menu">
+        <li><a href="{% url 'inicio' %}">Inicio</a></li>
+        <li><a href="{% url 'proyecto' %}">Cartelera</a></li>
+        <li><a href="https://www.instagram.com/peli.club?igsh=MWludG5jMTgzNWhxcA%3D%3D&utm_source=qr" target="_blank">Contacto</a></li>
+    </ul>
+    <p>&copy; 2025 | Todos los derechos reservados</p>
+</footer>
+
+
+
+
+</body>
+</html>

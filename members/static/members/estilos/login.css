@@ -1,0 +1,118 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #f39c12, #f1c40f);
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 🔹 Logo pequeño */
+.logo {
+    height: 50px;       /* tamaño fijo del logo */
+    width: auto;        /* mantiene proporción */
+    margin-right: 15px;
+    display: inline-block; /* se acomoda bien en línea */
+    vertical-align: middle;
+}
+
+/* Contenedor principal */
+.login-container {
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
+    width: 350px;
+    text-align: center;
+}
+
+/* Encabezado */
+.login-container h1 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* espacio entre logo y texto */
+}
+
+/* Formularios */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 6px;
+    color: #444;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+/* Botones */
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.btn {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+/* Botón principal */
+.btn-primary {
+    background: #2575fc;
+    color: white;
+    border: none;
+}
+.btn-primary:hover {
+    background: #1a5fd1;
+}
+
+/* Botón secundario */
+.btn-secondary {
+    background: #eee;
+    color: #333;
+    border: 1px solid #ccc;
+}
+.btn-secondary:hover {
+    background: #ddd;
+}
+
+/* Link recuperar */
+.btn-link {
+    background: none;
+    color: #2575fc;
+    font-size: 14px;
+}
+.btn-link:hover {
+    text-decoration: underline;
+}
+
+/* Botón registrar */
+.btn-register {
+    background: #28a745;
+    color: white;
+    border: none;
+}
+.btn-register:hover {
+    background: #218838;
+}

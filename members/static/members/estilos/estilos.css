@@ -1,0 +1,149 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:  sans-serif;
+}
+
+body{
+    background-color: #c882d8;
+    font-family: sans-serif;
+    margin: 0;
+}
+header {
+    display: flex;
+    height: 70px;
+    width: 100%;
+    background-color: coral;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    position: fixed;  /* Hace que el encabezado se quede fijo en la parte superior */
+    top: 0;  /* Coloca el encabezado en la parte superior */
+    left: 0;
+    z-index: 1000;  /* Asegura que el encabezado esté encima de otros elementos */
+}
+
+/* Estilo para los enlaces de navegación */
+header a {
+    color: black;  /* Color de los enlaces */
+    text-decoration: none;
+    margin-left: 20px;  /* Separación entre los enlaces */
+}
+
+/* Espaciado adecuado para los enlaces */
+header a:hover {
+    text-decoration: underline;
+}
+
+
+.contenedor {
+    display: flex;  /* Utilizamos flexbox */
+    justify-content: space-around;  /* Espacio entre las imágenes */
+  }
+
+.cont{
+    height: 50vh;
+    margin: 5%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h1{
+  text-align: center;
+}
+P{
+    color: black;
+   
+    width: 50%;;
+    font-weight: bold;
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+    padding: 0 15px;  /* Espaciado horizontal entre los enlaces */
+    position: relative;
+}
+
+
+nav a:not(:last-child):after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 30px;
+    background-color: black;  /* Línea blanca para la separación */
+}
+.login{
+    width: 20px;
+    height: 20px;
+}
+.logo{
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center; /* Alinea verticalmente */
+  gap: 10px; /* Espacio entre imagen y texto */
+}
+
+
+  p{
+    color: black;
+    text-align: center;
+    width: 50%;
+  
+    
+  }
+
+  .footer{
+    position: relative;
+    width:100% ;
+    background: #286bcf ;
+    min-height: 100px;
+    padding: 20px  50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .menu{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    margin: 10px 0px;
+    flex-wrap: wrap;
+  }
+
+  .menu-elem{
+    list-style: none;
+  }
+
+  .menu-icon{
+    color: white;
+    font-size: 20px;
+    display: inline-block;
+    text-decoration: none;
+    margin: 5px 10px;
+    opacity: 0.5;
+    transition: 0.3s;
+  }
+
+  .menu-icon:hover{
+    opacity: 1;
+  }
+
+  .text{
+    color: white;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+  

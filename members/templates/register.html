@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro - PELICLUB</title>
+    <link rel="stylesheet" href="{% static 'members/estilos/estiloRegister.css' %}">
+</head>
+<body>
+    <div class="login-container"> 
+        <img class="logo" src="{% static 'members/imagenes/logo.webp' %}" alt="Logo PELICLUB">
+        <h1>Crear su Usuario de Peliclub</h1>
+
+        {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                    <p class="{{ message.tags }}">{{ message }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <form method="post">
+            {% csrf_token %}
+            
+            <label>Nombre de usuario</label>
+            <input type="text" name="nombre_usuario" required>
+
+            <label>Correo electrónico</label>
+            <input type="email" name="correo_electronico" required>
+
+            <label>Contraseña</label>
+            <input type="password" name="contraseña" required><br><br>
+
+            <center><button type="submit" class="btn btn-register">Registrar</button></center><br>
+            <a href="{% url 'login' %}" class="btn btn-secondary">Ya tengo cuenta</a>
+            
+        </form>
+    </div>
+</body>
+</html>

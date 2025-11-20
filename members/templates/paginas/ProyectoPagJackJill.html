@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'members/estilos/estilos2.css' %}">
+</head>
+<body style="background-color: #e293f4;">
+    <header>
+        <div class="logo">
+            <img class="logo" src="{% static 'members/imagenes/logo.webp' %}" alt="Logo PELICLUB">
+            <h2 class="nombre-empresa">PELICLUB</h2>
+        </div>
+       <nav>
+   
+        <a href="{% url 'proyecto' %}" class="nav-link">Cartelera</a>
+        <a href="{% url 'logout' %}" class="nav-link">Cerrar sesión</a>
+    
+</nav>
+
+
+    </header>
+
+    <div class="wrapper">
+        <img src="{% static 'members/imagenes/jackjill.jpg' %}" width="450" height="450" alt="Película Jack and Jill">
+        <div class="text-box">
+            <h1><b>Sinopsis</b></h1><br>
+            Un padre de familia llamado Jack debe enfrentarse a un enorme problema: <br>
+            la llegada por Navidad de su odiada hermana Jill. <br>
+            La visita se alarga más de la cuenta, lo que les <br>
+            obligará a limar asperezas. <br> <br>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/oJVv3PBoPMc?si=uTmVbX3ARabmw5Nx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <br><br><br>
+
+  <footer class="footer">
+    <ul class="menu">
+        <li class="menu-elem"><a href="{% url 'inicio' %}" class="menu-icon">Inicio</a></li>
+        <li class="menu-elem"><a href="{% url 'proyecto' %}" class="menu-icon">Cartelera</a></li>
+        <li class="menu-elem"><a href="https://www.instagram.com/peli.club?igsh=MWludG5jMTgzNWhxcA%3D%3D&utm_source=qr" target="_blank" class="menu-icon">Contacto</a></li>
+    </ul>
+    <p class="text">@2025 | Todos los derechos reservados</p>
+</footer>
+</body>
+</html>

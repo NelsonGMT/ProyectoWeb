@@ -1,0 +1,122 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #f39c12, #f1c40f);
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    height: 35px;
+    width: 100px;      /* 🔑 ancho mayor */
+    margin-bottom: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: contain; /* evita que se deforme demasiado */
+}
+
+
+
+/* Contenedor del formulario reducido */
+.login-container {
+    background: #fff;
+    padding: 25px 20px;
+    border-radius: 10px;
+    box-shadow: 0px 6px 15px rgba(0,0,0,0.2);
+    width: 280px; /* más estrecho */
+    text-align: center;
+}
+
+.login-container h1 {
+    margin-bottom: 15px;
+    font-size: 1.2rem; /* más pequeño */
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 4px;
+    font-size: 0.85rem;
+    color: #444;
+}
+
+input {
+    width: 100%;
+    padding: 7px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 13px;
+}
+
+/* Botones reducidos */
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.btn {
+    display: block;
+    text-align: center;
+    padding: 7px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+/* Botón principal */
+.btn-primary {
+    background: #2575fc;
+    color: white;
+    border: none;
+}
+.btn-primary:hover {
+    background: #1a5fd1;
+}
+
+/* Botón secundario */
+.btn-secondary {
+    background: #eee;
+    color: #333;
+    border: 1px solid #ccc;
+}
+.btn-secondary:hover {
+    background: #ddd;
+}
+
+/* Link recuperar */
+.btn-link {
+    background: none;
+    color: #2575fc;
+    font-size: 0.75rem;
+}
+.btn-link:hover {
+    text-decoration: underline;
+}
+
+/* Botón registrar */
+.btn-register {
+    background: #28a745;
+    color: white;
+    border: none;
+}
+.btn-register:hover {
+    background: #218838;
+}
+.error {
+    color: rgb(0, 0, 0);
+    font-size: 0.75rem;
+    margin-top: 3px;
+}
